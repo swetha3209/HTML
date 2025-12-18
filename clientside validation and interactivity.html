@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2> Form validation Example</h2>
+<form onsubmit="return validateForm()">
+   <label>Email:</label>
+   <input type="text" id="email" onkeyup="validateEmail()">
+   <span id="emailError" style="color:red"></span><br><br>
+
+   <label>Password (min a chars):</label>
+   <input type="password" id="password" onkeyup="validatePassword()">
+   <span id="passwordError" styles="color: red"></span><br><br>
+   <button type="submit">Submit</button>
+</form>
+<script>
+function validateEmail(){
+    let email = document.getElementById("email").value;
+    let errorSpan = document.getElementById("emailError");
+    if (!email.includes("@")) {
+        errorSpan.innerText = "";
+        return true;
+    }
+}
+function validateEmail(){
+    let pwd = document.getElementById("password").value;
+    let errorSpan = document.getElementById("passwordError");
+    if (pwd.length < 6) {
+        errorSpan.innerText = "Password too short";
+        return False;
+    }
+    }
+</script>
+</body>
+</html>
